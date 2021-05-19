@@ -27,12 +27,14 @@
 </head>
 
 <body>
+    <!-- container for VUE -->
     <div id="app">
         <!-- buton that uses vue to call the useAPI function to reset the "limit" of the number of objects in the array -->
         <div class="container-fluid">
             <div class="container">
                 <div class="row">
                     <div class="col" style="padding-right: 5rem;">
+                        
                         <div class="badge badge-primary text-wrap" style="width: 11rem; text-align: left;">
                             <h1>My Weather App</h1>
                         </div>
@@ -43,11 +45,14 @@
                             <p class="text-muted cap">{{visDescription}}</p>
                         </section>
                     </div>
+
+
                     <div class="col row myborder" style="color: rgb(77, 178, 245);">
                         <div class="big" style="text-align: center;">
                             {{temp}}
                             <p class="text-muted" style="font-size: x-small;">*Please double click the unit of measurement</p>
                         </div>
+
                         <ul class="col- lower">
                             <li>
                                 <input class="hide" type="radio" id="fahren" name="degree" value="imperial"
@@ -63,6 +68,8 @@
                         </ul>
                     </div>
                 </div>
+
+
                 <div class="row ">
                     <div class="col">
                         <p style="color: white;">Please Enter The Zipcode:</p>
@@ -82,6 +89,8 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="row">
                     <div class="col">
                         <p class="error myborder" style="color:red; font-size: 2rem;">{{errMessage}}</p>
@@ -104,16 +113,7 @@
                 Developer: Nikki C. | My Weather App *courtesy of <a href="https://openweathermap.org/api">openweathermap.org </a> | Last Date Updated: 05/18/2021
             </footer>
         </div>
-
-
-
-
-
-
-
     </div>
-
-
     <!-- script link -->
     <script src="script.js"></script>
 </body>

@@ -85,6 +85,7 @@ input:checked + label {
 }
 footer{
     text-align: center;
+    /* keeps the footer at the bottom of the page */
     vertical-align: bottom;
     position: absolute;
     bottom: 0;

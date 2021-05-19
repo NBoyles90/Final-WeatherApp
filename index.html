@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Author: Nikki Collins
+    Date: 05/15
+    Project: Current Weather (Final)
+    Purpose: You will create a page where a user can enter a zip code and choose between Celsius or Fahrenheit. The page will return the current temperature, current conditions and city. You may assume for this assignment that your page only accepts US zip codes. -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- style sheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&display=swap" rel="stylesheet"> 
+    <title>Current Weather</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- buton that uses vue to call the useAPI function to reset the "limit" of the number of objects in the array -->
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col" style="padding-right: 5rem;">
+                        <div class="badge badge-primary text-wrap" style="width: 11rem; text-align: left;">
+                            <h1>My Weather App</h1>
+                        </div>
+                        <section>
+                            <h2 style="color: white;">{{city}} </h2>
+                            <img v-if="imgCode" v-bind:src="'http://openweathermap.org/img/wn/' + imgCode + '.png'"
+                                alt="" style="height: 2.5rem;">
+                            <p class="text-muted cap">{{visDescription}}</p>
+                        </section>
+                    </div>
+                    <div class="col row myborder" style="color: rgb(77, 178, 245);">
+                        <div class="big" style="text-align: center;">
+                            {{temp}}
+                            <p class="text-muted" style="font-size: x-small;">*Please double click the unit of measurement</p>
+                        </div>
+                        <ul class="col- lower">
+                            <li>
+                                <input class="hide" type="radio" id="fahren" name="degree" value="imperial"
+                                    v-model="userDegree">
+                                <label for="fahren" @click=displayDegree>&#x2109</label><br>
+                            </li>
+                            <hr>
+                            <li>
+                                <input class="hide" type="radio" id="cels" name="degree" value="metric"
+                                    v-model="userDegree">
+                                <label for="cels" @click=displayDegree>&#x2103</label><br>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col">
+                        <p style="color: white;">Please Enter The Zipcode:</p>
+                        <input type="text" v-model=userZip>
+                        <button @click=validateZip class="btn btn-primary">update zipcode</button>
+                    </div>
+                    <div class="card col space" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Current Humidity: </h5>
+                            <p class="card-text">{{humidity}}%</p>
+                        </div>
+                    </div>
+                    <div class="card col space" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Today's High: </h5>
+                            <p class="card-text">&#x1F815{{tempMax}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="error myborder" style="color:red; font-size: 2rem;">{{errMessage}}</p>
+                    </div>
+                    <div class="card col space" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Feels Like:</h5>
+                            <p class="card-text">{{feels}}</p>
+                        </div>
+                    </div>
+                    <div class="card col space" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Today's Low:</h5>
+                            <p class="card-text"> &#x1F817{{tempMin}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                Developer: Nikki C. | My Weather App *courtesy of <a href="https://openweathermap.org/api">openweathermap.org </a> | Last Date Updated: 05/18/2021
+            </footer>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+    <!-- script link -->
+    <script src="script.js"></script>
+</body>
+
+</html>

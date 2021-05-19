@@ -1,0 +1,93 @@
+/* Author: Nikki Collins
+Date: 05/15
+Project: Current Weather (Final)
+Purpose: You will create a page where a user can enter a zip code and choose between Celsius or Fahrenheit. The page will return the current temperature, current conditions and city. You may assume for this assignment that your page only accepts US zip codes. */
+
+h1{
+    margin-left: .5rem;
+}
+.container{
+    margin-top: 1rem;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 1em; /* Height of footer */
+    min-height: 100%;
+}
+body{
+    background: url(purple.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Cabin', sans-serif;
+}
+h2, img{
+    display: inline;
+    margin-bottom: 0%;
+    font-family: 'Days One', sans-serif;
+    font-size: 2.5rem;
+}
+/*capitalizes the first letter in the words for the description*/
+.cap{
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+.big{
+    font-size: 13rem;
+    font-family: 'Days One', sans-serif;
+}
+.card-text{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.text-wrap, .lower{
+    margin-top: 3rem;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.text-mute{
+    margin: 0%;
+}
+
+ul {
+    font-family: 'Days One', sans-serif;
+    font-size: 2rem;
+    list-style: none;
+    
+}
+li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* hides the radio button selector */
+.hide {
+    visibility:hidden;
+}
+label {
+    cursor: pointer;
+}
+input:checked + label {
+    font-size: 3.5rem;
+}
+
+.space{
+    margin: 0 0 1rem 1rem;
+    background-color: rgb(250, 226, 226);
+}
+
+.error{
+    color:red; 
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.myborder{
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+footer{
+    text-align: center;
+    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:  rgb(250, 226, 226);
+}
